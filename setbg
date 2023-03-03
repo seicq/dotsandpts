@@ -1,6 +1,0 @@
-wall=$( grep file ~/.config/nitrogen/bg-saved.cfg | sed 's/file=//g' )
-wal -i $wall >/dev/null
-sed -i 'N;$!P;D' $HOME/.cache/wal/colors-wal-dwm.h
-(cd $HOME/.suckless/dwm && sudo cp config.def.h config.h &&  sudo make clean install>/dev/null)
-(cd $HOME/.suckless/st && sudo cp config.def.h config.h && sudo make clean install>/dev/null)
-(cd $HOME/.suckless/dmenu && sudo cp config.def.h config.h && sudo make clean install>/dev/null)
