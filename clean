@@ -1,0 +1,12 @@
+echo "Deleting pacman cache"
+sudo pacman -Sc
+echo "Deleting AUR  cache"
+yay -Sc
+echo "Removing unwanted dependencies"
+yay -Yc
+echo "Removing orphans"
+sudo pacman -Rns $(pacman -Qtdq)
+echo "Cleaning journal"
+sudo journalctl --vacuum-time=2weeks
+echo "Updating Mirrolist"
+sudo reflector -c India -a 5 --sort rate --save /etc/pacman.d/mirrorlist
